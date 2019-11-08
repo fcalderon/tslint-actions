@@ -99,7 +99,7 @@ const SeverityAnnotationLevelMap = new Map<RuleSeverity, "warning" | "failure">(
 
       let files: string[] = [];
 
-      if (onlyChangedFiles && ctx.payload.pull_request) {
+      if (onlyChangedFiles) {
         files = await findChangedFiles(ctx, octokit, pattern);
       } else {
         files = glob.sync(pattern!);
