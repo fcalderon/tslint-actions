@@ -84,7 +84,7 @@ const SeverityAnnotationLevelMap = new Map([
         else {
             const linter = new tslint_1.Linter(options);
             let files = [];
-            if (onlyChangedFiles && ctx.payload.pull_request) {
+            if (onlyChangedFiles) {
                 files = await findChangedFiles(ctx, octokit, pattern);
             }
             else {

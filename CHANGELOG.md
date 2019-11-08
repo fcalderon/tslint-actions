@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/fcalderon/tslint-actions/compare/v1.2.0...v1.2.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* **onlychangedfiles:** support commits too ([9c762ed](https://github.com/fcalderon/tslint-actions/commit/9c762ed228dd9d910348391d8e44888e9f090606))
+
 # [1.2.0](https://github.com/fcalderon/tslint-actions/compare/v1.1.1...v1.2.0) (2019-11-08)
 
 
