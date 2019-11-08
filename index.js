@@ -9,8 +9,8 @@ const glob = require("glob");
 const path = require("path");
 const tslint_1 = require("tslint");
 const CHECK_NAME = "TSLint Checks";
-const findChangedFiles = async (ctx, octokit) => {
-    let files = [];
+const findChangedFiles = async (ctx, octokit, pattern) => {
+    let files = glob.sync(pattern);
     const pullRequest = ctx.payload.pull_request;
     if (pullRequest) {
         const response = await octokit.pulls.listFiles({
@@ -85,7 +85,7 @@ const SeverityAnnotationLevelMap = new Map([
             const linter = new tslint_1.Linter(options);
             let files = [];
             if (onlyChangedFiles && ctx.payload.pull_request) {
-                files = await findChangedFiles(ctx, octokit);
+                files = await findChangedFiles(ctx, octokit, pattern);
             }
             else {
                 files = glob.sync(pattern);
