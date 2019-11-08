@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/fcalderon/tslint-actions/compare/v1.1.1...v1.2.0) (2019-11-08)
+
+
+### Bug Fixes
+
+* **changedfiles:** get list of files ([973f0a6](https://github.com/fcalderon/tslint-actions/commit/973f0a61d75e4d846155c3d1bf58fbad34e1caf8))
+* **changedfiles:** get list of files ([497c085](https://github.com/fcalderon/tslint-actions/commit/497c08543e719dd540b84e013e00299b44eea092))
+* **package:** use this repo rather than forked repo ([f6a6854](https://github.com/fcalderon/tslint-actions/commit/f6a6854b78e0a060f3f59c2348ce7172ad79409e))
+
+
+### Features
+
+* **onlychangedfiles:** allow to lint only changed files in the PR ([2d48b5d](https://github.com/fcalderon/tslint-actions/commit/2d48b5d156b2a0d02b30daf4d97cfe27efb71552))
+
 ## [1.1.1](https://github.com/mooyoul/tslint-actions/compare/v1.1.0...v1.1.1) (2019-09-19)
 
 
