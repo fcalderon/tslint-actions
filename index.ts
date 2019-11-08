@@ -11,8 +11,8 @@ import { Configuration, Linter, RuleSeverity } from "tslint";
 
 const CHECK_NAME = "TSLint Checks";
 
-const findChangedFiles = async (ctx: Context, octokit: Octokit): Promise<string[]> => {
-  let files: string[] = [];
+const findChangedFiles = async (ctx: Context, octokit: Octokit, pattern: string): Promise<string[]> => {
+  let files: string[] = glob.sync(pattern!);
   const pullRequest = ctx.payload.pull_request;
 
   if (pullRequest) {
@@ -100,7 +100,7 @@ const SeverityAnnotationLevelMap = new Map<RuleSeverity, "warning" | "failure">(
       let files: string[] = [];
 
       if (onlyChangedFiles && ctx.payload.pull_request) {
-        files = await findChangedFiles(ctx, octokit);
+        files = await findChangedFiles(ctx, octokit, pattern);
       } else {
         files = glob.sync(pattern!);
       }
