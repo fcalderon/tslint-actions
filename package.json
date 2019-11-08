@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mooyoul/tslint-actions.git"
+    "url": "git+https://github.com/fcalderon/tslint-actions.git"
   },
   "keywords": [
     "github-actions",
@@ -21,9 +21,9 @@
   "author": "MooYeol Prescott Lee <mooyoul@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mooyoul/tslint-actions/issues"
+    "url": "https://github.com/fcalderon/tslint-actions/issues"
   },
-  "homepage": "https://github.com/mooyoul/tslint-actions#readme",
+  "homepage": "https://github.com/fcalderon/tslint-actions#readme",
   "devDependencies": {
     "@semantic-release/changelog": "3.0.5",
     "@semantic-release/commit-analyzer": "6.3.3",
