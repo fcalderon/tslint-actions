@@ -12,6 +12,8 @@ const CHECK_NAME = "TSLint Checks";
 const findChangedFiles = async (ctx, octokit, pattern) => {
     let files = glob.sync(pattern);
     const pullRequest = ctx.payload.pull_request;
+    // tslint:disable-next-line:no-console
+    console.log("Is this pull request?", !!pullRequest);
     if (pullRequest) {
         const response = await octokit.pulls.listFiles({
             owner: ctx.repo.owner,
@@ -20,6 +22,10 @@ const findChangedFiles = async (ctx, octokit, pattern) => {
         });
         const changedFiles = response.data.map((f) => f.filename);
         files = files.filter((f) => changedFiles.includes(f));
+        // tslint:disable-next-line:no-console
+        console.log("List of files in pull request:", files.length);
+        // tslint:disable-next-line:no-console
+        console.log("List of files in pull request (2):", changedFiles.length);
     }
     else {
         const response = await octokit.repos.getCommit({
@@ -29,6 +35,10 @@ const findChangedFiles = async (ctx, octokit, pattern) => {
         });
         const changedFiles = response.data.files.map((f) => f.filename);
         files = files.filter((f) => changedFiles.includes(f));
+        // tslint:disable-next-line:no-console
+        console.log("List of files in commit:", files.length);
+        // tslint:disable-next-line:no-console
+        console.log("List of files in pull commit (2):", changedFiles.length);
     }
     return files;
 };
