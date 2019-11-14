@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/fcalderon/tslint-actions/compare/v1.2.3...v1.2.4) (2019-11-14)
+
+
+### Bug Fixes
+
+* **only-changed-files:** find all files in pull request for commits ([dfd8704](https://github.com/fcalderon/tslint-actions/commit/dfd87046d9333400ccd42a8e6ddf4c5c3bb63a01))
+
 ## [1.2.3](https://github.com/fcalderon/tslint-actions/compare/v1.2.2...v1.2.3) (2019-11-14)
 
 
