@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/fcalderon/tslint-actions/compare/v1.2.2...v1.2.3) (2019-11-14)
+
+
+### Bug Fixes
+
+* **only-changed-files:** remove column ([0a4318b](https://github.com/fcalderon/tslint-actions/commit/0a4318bd9878681d88c48dd9b302c79da7c1b334))
+
 ## [1.2.2](https://github.com/fcalderon/tslint-actions/compare/v1.2.1...v1.2.2) (2019-11-12)
 
 
