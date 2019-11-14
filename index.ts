@@ -132,8 +132,6 @@ const SeverityAnnotationLevelMap = new Map<RuleSeverity, "warning" | "failure">(
     path: failure.getFileName(),
     start_line: failure.getStartPosition().getLineAndCharacter().line,
     end_line: failure.getEndPosition().getLineAndCharacter().line,
-    start_column: failure.getStartPosition().getLineAndCharacter().character,
-    end_column: failure.getStartPosition().getLineAndCharacter().character,
     annotation_level: SeverityAnnotationLevelMap.get(failure.getRuleSeverity()) || "notice",
     message: `[${failure.getRuleName()}] ${failure.getFailure()}`,
   }));
