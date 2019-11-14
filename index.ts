@@ -32,12 +32,16 @@ const findChangedFiles = async (ctx: Context, octokit: Octokit, pattern: string)
     // tslint:disable-next-line:no-console
     console.log("List of files in pull request (2):", changedFiles.length);
   } else {
-    const response = await octokit.repos.getCommit({
-      owner: ctx.repo.owner,
-      repo: ctx.repo.repo,
-      ref: ctx.sha,
+    const response = await octokit.pulls.listFiles({
+        owner: ctx.repo.owner,
+        repo: ctx.repo.repo,
+        pull_number: (await octokit.repos.listPullRequestsAssociatedWithCommit({
+            owner: ctx.repo.owner,
+            repo: ctx.repo.repo,
+            commit_sha: ctx.sha,
+        })).data[0].number,
     });
-    const changedFiles = response.data.files.map((f) => f.filename);
+    const changedFiles = response.data.map((f) => f.filename);
     files = files.filter((f) => changedFiles.includes(f));
 
     // tslint:disable-next-line:no-console
